@@ -1,0 +1,21 @@
+Phishing Email Sample – Coca-Cola Giveaway
+
+From: Coca-Cola <email_Gep2pQ76g78@opmajyqjcg.georgs-faescht.com>  
+Time: 7:03 PM  
+Subject: ANSWER & WIN! A Brand New Portable Blender & Juicer  
+
+Message Body:
+You have been chosen to participate in our Loyalty Program for FREE!  
+It will take you only a minute to receive this fantastic prize.  
+
+[GET STARTED NOW] (link button)
+
+⚠️ Red Flags Identified:
+1. Sender's email address is suspicious and unrelated to Coca-Cola.
+2. No recipient personalization (e.g., “Dear Prince” missing).
+3. Urgent language — designed to create FOMO or panic clicking.
+4. High reward for no reason — typical phishing trick.
+5. External domain doesn't belong to official Coca-Cola channels.
+6. Use of images and flashy CTA buttons to distract from the scam.
+
+Conclusion: This is a typical giveaway scam email using branding, fake urgency, and spoofed sender info to collect personal data.
