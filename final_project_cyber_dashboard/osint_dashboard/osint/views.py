@@ -1,3 +1,30 @@
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponse
+import subprocess
+import whois
 
-# Create your views here.
+
+
+import requests
+
+def index(request):
+    return render(request, 'index.html')
+
+def result(request):
+
+   if request.method == 'POST':
+        query = request.POST.get('query')
+        result_data = {}
+        
+        # 1. WHOIS Lookup
+        try:
+            whois_data = whois.whois(query)
+            result_data['whois'] = whois_data.text if hasattr(whois_data, 'text') else str(whois_data)
+        except Exception as e:
+            result_data['whois'] = f"WHOIS failed: {e}"
+
+        return render(request, 'result.html', {
+            'query': query,
+            'results': result_data 
+        })
+
+        return render(request, 'index.html')
