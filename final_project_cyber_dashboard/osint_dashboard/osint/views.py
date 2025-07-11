@@ -14,6 +14,18 @@ def result(request):
    if request.method == 'POST':
         query = request.POST.get('query')
         result_data = {}
+
+
+        # 1. theHarvester
+        try:
+            harvester_cmd = f"theHarvester -d {query} -b all -l 50"
+            harvester_output = subprocess.getoutput(harvester_cmd)
+            result_data['harvester'] = harvester_output
+        except Exception as e:
+            result_data['harvester'] = f"Error running theHarvester: {e}"
+
+
+            
         
         # 1. WHOIS Lookup
         try:
