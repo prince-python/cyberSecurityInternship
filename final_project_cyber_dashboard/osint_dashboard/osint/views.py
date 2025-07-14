@@ -37,6 +37,26 @@ def result(request):
         return render(request, 'result.html', {
             'query': query,
             'results': result_data 
+
+        })
+
+
+         # 3. EmailRep (if email format)
+        try:
+            if '@' in query:
+                rep_response = requests.get(f"https://emailrep.io/{query}")
+                if rep_response.status_code == 200:
+                    result_data['emailrep'] = rep_response.json()
+                else:
+                    result_data['emailrep'] = f"EmailRep Error: {rep_response.status_code}"
+            else:
+                result_data['emailrep'] = "Skipped - not an email."
+        except Exception as e:
+            result_data['emailrep'] = f"EmailRep Exception: {e}"
+
+        return render(request, 'result.html', {
+            'query': query,
+            'results': result_data
         })
 
         return render(request, 'index.html')
